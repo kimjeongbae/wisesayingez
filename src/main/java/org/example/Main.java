@@ -49,9 +49,9 @@ public class Main {
             } else if (command.equals("수정")) {
                 System.out.println("수정할 번호를 입력하세요.");
 
-                int modify = Integer.parseInt(sc.nextLine());
+                int modifyId = Integer.parseInt(sc.nextLine());
                 for (int i = 0; i < wiseSayingList.size(); i++) {
-                    if (wiseSayingList.get(i).getId() == modify) {
+                    if (wiseSayingList.get(i).getId() == modifyId) {
                         WiseSaying wiseSaying = wiseSayingList.get(i);
 
                         System.out.println("현재 작가 : " + wiseSaying.getAuthor());
@@ -64,49 +64,13 @@ public class Main {
                         String content = sc.nextLine();
                         wiseSaying.setContent(content);
 
-                        System.out.println("수정이 완료되었습니다.");
+                        System.out.println(modifyId + "번 수정이 완료되었습니다.");
 
                     }
-
                 }
             }
-
-
         }
-
-
     }
 }
 
-class WiseSaying {
-    private int id;
-    private String author;
-    private String content;
 
-    WiseSaying(int id, String author, String content) {
-        this.id = id;
-        this.author = author;
-        this.content = content;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-}
